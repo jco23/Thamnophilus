@@ -595,6 +595,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Record Payment"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jRecordP_btnMouseReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jPayments_Label">
           <Properties>
