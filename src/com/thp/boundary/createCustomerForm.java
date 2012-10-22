@@ -1,6 +1,7 @@
 package com.thp.boundary;
 
 
+import com.thp.object.AccountDB;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -577,31 +578,50 @@ public class createCustomerForm extends javax.swing.JFrame {
     private void jAddUpdateBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jAddUpdateBtnMouseClicked
         // TODO add your handling code here:
         //pass each data item into the database
-        
-        String driver = "org.apache.derby.jdbc.EmbeddedDriver";
-        String dbName="//localhost:1527/accountdb;";
-        String connectionURL = "jdbc:derby:" + dbName; 
-        Connection conn = null;
-
-        try{ 
-                Class.forName(driver);
-        }catch(ClassNotFoundException e){
-            System.out.println(e);
+        AccountDB db = new AccountDB();
+        try {
+            db.openDB();
+            Statement stmt = db.conn.createStatement();  
+            ResultSet rs = stmt.executeQuery("SELECT * FROM APP.DEPARTMENT");
+            
+            while (rs.next()) {
+                jTitleTxt.setText(rs.getString("NAME"));
+                jPriceTxt.setText(rs.getString("ID"));
+            }
+            rs.close();
+            
+            db.closeDB();
+        } catch (SQLException ex) {
+            Logger.getLogger(createCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        try{
-        conn = DriverManager.getConnection(connectionURL);
-        Statement stmt = conn.createStatement();
-        
-        ResultSet rs = stmt.executeQuery("SELECT * FROM APP.DEPARTMENT");
-        
-        while (rs.next()) {
-        jTitleTxt.setText(rs.getString("NAME"));
-        jPriceTxt.setText(rs.getString("ID"));
-    }
-        }catch(SQLException e){
-            System.err.println(e);
-        } 
+            /*
+            String driver = "org.apache.derby.jdbc.EmbeddedDriver";
+            String dbName="//localhost:1527/accountdb;";
+            String connectionURL = "jdbc:derby:" + dbName; 
+            Connection conn = null;
+
+            try{ 
+                    Class.forName(driver);
+            }catch(ClassNotFoundException e){
+                System.out.println(e);
+            }
+            
+            try{
+            conn = DriverManager.getConnection(connectionURL);
+            Statement stmt = conn.createStatement();
+            
+            ResultSet rs = stmt.executeQuery("SELECT * FROM APP.DEPARTMENT");
+            
+            while (rs.next()) {
+            jTitleTxt.setText(rs.getString("NAME"));
+            jPriceTxt.setText(rs.getString("ID"));
+        }
+            }catch(SQLException e){
+                System.err.println(e);
+            } 
+            * */
+ 
 
     }//GEN-LAST:event_jAddUpdateBtnMouseClicked
 

@@ -1,0 +1,33 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.thp.object;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+/**
+ *
+ * @author user
+ */
+public class AccountDB {
+    public String driver = "org.apache.derby.jdbc.EmbeddedDriver";
+    public String dbName="//localhost:1527/accountdb;";
+    public String connectionURL = "jdbc:derby:" + dbName; 
+    public Connection conn = null;
+    public void openDB() throws SQLException{
+        try{ 
+                Class.forName(driver);
+                conn = DriverManager.getConnection(connectionURL);
+        }catch(ClassNotFoundException e){
+            System.out.println(e);
+        }
+    };
+    public void closeDB() throws SQLException{
+        conn.close();
+    };
+}

@@ -9,9 +9,25 @@ package com.thp.object;
  *
  * @author user
  */
-public class Customer extends Person{
+public class Customer{
+    Person person = new Person();
     int id;
     boolean type;
+    String soldToAddress;
+    String soldToCity;
+    String soldToState;
+    int soldToZipCode;
+    String shipToAddress;
+    String shipToCity;
+    String shipTopState;
+    int shipToZipCode;
+    int fax;
+    String email;
+    String contactInfo;
+    boolean preference;
+    int discount;
+    String termsCode;
+    int taxRate;
     
     
 }
