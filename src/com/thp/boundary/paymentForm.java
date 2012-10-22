@@ -9,7 +9,7 @@ package com.thp.boundary;
  *
  * @author Mark Ma
  */
-import valueObjects.payment;
+import com.thp.object.payment;
 import java.util.*;
 
 public class paymentForm extends javax.swing.JFrame {
