@@ -124,6 +124,11 @@ public class Switchboard extends javax.swing.JFrame {
         jWidgets_Label.setText("Widgets");
 
         jCreateW_btn.setText("Create");
+        jCreateW_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jCreateW_btnMouseReleased(evt);
+            }
+        });
 
         jEditW_btn.setText("Edit");
 
@@ -434,6 +439,11 @@ public class Switchboard extends javax.swing.JFrame {
        new createCustomerForm().setVisible(true);
        
     }//GEN-LAST:event_jCreateC_btnMouseReleased
+
+    private void jCreateW_btnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCreateW_btnMouseReleased
+        // TODO add your handling code here:
+        new createWidgetForm().setVisible(true);
+    }//GEN-LAST:event_jCreateW_btnMouseReleased
 
     /**
      * @param args the command line arguments
