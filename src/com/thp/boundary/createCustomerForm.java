@@ -1,7 +1,10 @@
 package com.thp.boundary;
 
 
+import com.thp.control.CustomerControl;
 import com.thp.object.AccountDB;
+import com.thp.object.Customer;
+import com.thp.object.Person;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -578,22 +581,11 @@ public class createCustomerForm extends javax.swing.JFrame {
     private void jAddUpdateBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jAddUpdateBtnMouseClicked
         // TODO add your handling code here:
         //pass each data item into the database
-        AccountDB db = new AccountDB();
-        try {
-            db.openDB();
-            Statement stmt = db.conn.createStatement();  
-            ResultSet rs = stmt.executeQuery("SELECT * FROM APP.DEPARTMENT");
-            
-            while (rs.next()) {
-                jTitleTxt.setText(rs.getString("NAME"));
-                jPriceTxt.setText(rs.getString("ID"));
-            }
-            rs.close();
-            
-            db.closeDB();
-        } catch (SQLException ex) {
-            Logger.getLogger(createCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            Customer cust = new Customer();
+            CustomerControl.getCustomer(cust);
+            jTitleTxt.setText(cust.getFirstName());
+            jPriceTxt.setText(cust.getLastName());
+            jNameTxt.setText(Integer.toString(cust.getPhone()));
         
             /*
             String driver = "org.apache.derby.jdbc.EmbeddedDriver";
@@ -714,7 +706,7 @@ public class createCustomerForm extends javax.swing.JFrame {
     private javax.swing.JLabel jTitleLbl;
     private javax.swing.JLabel jTitleLbl1;
     private javax.swing.JLabel jTitleLbl2;
-    private javax.swing.JTextField jTitleTxt;
+    public javax.swing.JTextField jTitleTxt;
     private javax.swing.JTextField jTitleTxt1;
     private javax.swing.JLabel jTypeLbl;
     // End of variables declaration//GEN-END:variables

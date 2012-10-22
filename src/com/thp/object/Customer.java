@@ -7,7 +7,7 @@ package com.thp.object;
 
 /**
  *
- * @author user
+ * @author Joanne Co
  */
 public class Customer{
     Person person = new Person();
@@ -28,6 +28,22 @@ public class Customer{
     int discount;
     String termsCode;
     int taxRate;
+    
+    public Customer(){}
+    public void setPerson(String fn, String ln, int tel){
+        person.firstName = fn;
+        person.lastName = ln;
+        person.phone = tel;
+    }
+    public String getFirstName(){
+        return person.firstName;
+    }
+    public String getLastName(){
+        return person.lastName;
+    }
+    public int getPhone(){
+        return person.phone;
+    }
     
     
 }

@@ -7,7 +7,7 @@ package com.thp.object;
 
 /**
  *
- * @author user
+ * @author Joanne Co
  */
 public class Person {
     String firstName;
@@ -16,25 +16,25 @@ public class Person {
     
     public Person(){
         setPerson("","",0);
-    };
+    }
     public Person(String fn, String ln, int tel){
         setPerson(fn, ln, tel);
-    };
+    }
     public void setPerson(String fn, String ln, int tel){
         firstName=fn;
         lastName=ln;
         phone=tel;
-    };
+    }
     
     public String getFirstName(){
         return firstName; 
-    };
+    }
     
     public String getLastName(){
         return lastName;
-    };
+    }
     
     public int getPhone(){
         return phone;
-    };
+    }
 }
