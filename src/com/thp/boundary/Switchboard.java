@@ -341,6 +341,11 @@ public class Switchboard extends javax.swing.JFrame {
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jRecordP_btn.setText("Record Payment");
+        jRecordP_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jRecordP_btnMouseReleased(evt);
+            }
+        });
 
         jPayments_Label.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jPayments_Label.setText("Payments");
@@ -444,6 +449,11 @@ public class Switchboard extends javax.swing.JFrame {
         // TODO add your handling code here:
         new createWidgetForm().setVisible(true);
     }//GEN-LAST:event_jCreateW_btnMouseReleased
+
+    private void jRecordP_btnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRecordP_btnMouseReleased
+        // TODO add your handling code here:
+        new paymentForm().setVisible(true);
+    }//GEN-LAST:event_jRecordP_btnMouseReleased
 
     /**
      * @param args the command line arguments
