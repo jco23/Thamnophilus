@@ -1,5 +1,10 @@
 package com.thp.boundary;
 
+import com.thp.object.AccountDB;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -48,19 +53,19 @@ public class Switchboard extends javax.swing.JFrame {
         jEditS_btn = new javax.swing.JButton();
         jSearchS_btn = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
+        jIndivMonthSalesBtn = new javax.swing.JButton();
+        jIndivQuaterSalesBtn = new javax.swing.JButton();
         jReports_Label = new javax.swing.JLabel();
-        jButton17 = new javax.swing.JButton();
+        jIndivMonthWidgetBtn = new javax.swing.JButton();
         jReports_Label1 = new javax.swing.JLabel();
         jReports_Label2 = new javax.swing.JLabel();
         jReports_Label3 = new javax.swing.JLabel();
         jReports_Label4 = new javax.swing.JLabel();
-        jButton18 = new javax.swing.JButton();
-        jButton19 = new javax.swing.JButton();
-        jButton20 = new javax.swing.JButton();
-        jButton21 = new javax.swing.JButton();
-        jButton22 = new javax.swing.JButton();
+        jIndivCustSalesBtn = new javax.swing.JButton();
+        jAllCustSalesBtn = new javax.swing.JButton();
+        jAllMonthSalesBtn = new javax.swing.JButton();
+        jAllQuarterSalesBtn = new javax.swing.JButton();
+        jAllMonthWidgetBtn = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         jRecordP_btn = new javax.swing.JButton();
         jPayments_Label = new javax.swing.JLabel();
@@ -82,11 +87,21 @@ public class Switchboard extends javax.swing.JFrame {
         });
 
         jEditC_btn.setText("Edit");
+        jEditC_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jEditC_btnMouseClicked(evt);
+            }
+        });
 
         jCustomer_Label.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jCustomer_Label.setText("Customers");
 
         jSearchC_btn.setText("Search");
+        jSearchC_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jSearchC_btnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -125,14 +140,27 @@ public class Switchboard extends javax.swing.JFrame {
 
         jCreateW_btn.setText("Create");
         jCreateW_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCreateW_btnMouseClicked(evt);
+            }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
                 jCreateW_btnMouseReleased(evt);
             }
         });
 
         jEditW_btn.setText("Edit");
+        jEditW_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jEditW_btnMouseClicked(evt);
+            }
+        });
 
         jSearchW_btn.setText("Search");
+        jSearchW_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jSearchW_btnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -170,10 +198,25 @@ public class Switchboard extends javax.swing.JFrame {
         jInvoices_Label.setText("Invoices");
 
         jCreateI_btn.setText("Create");
+        jCreateI_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCreateI_btnMouseClicked(evt);
+            }
+        });
 
         jDeleteI_bt.setText("Delete");
+        jDeleteI_bt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jDeleteI_btMouseClicked(evt);
+            }
+        });
 
         jSearchI_btn.setText("Search");
+        jSearchI_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jSearchI_btnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -211,10 +254,25 @@ public class Switchboard extends javax.swing.JFrame {
         jSalesperson_Label.setText("Salespersons");
 
         jCreateS_btn.setText("Create");
+        jCreateS_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jCreateS_btnMouseClicked(evt);
+            }
+        });
 
         jEditS_btn.setText("Edit");
+        jEditS_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jEditS_btnMouseClicked(evt);
+            }
+        });
 
         jSearchS_btn.setText("Search");
+        jSearchS_btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jSearchS_btnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -248,14 +306,29 @@ public class Switchboard extends javax.swing.JFrame {
 
         jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton15.setText("Individual");
+        jIndivMonthSalesBtn.setText("Individual");
+        jIndivMonthSalesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jIndivMonthSalesBtnMouseClicked(evt);
+            }
+        });
 
-        jButton16.setText("Individual");
+        jIndivQuaterSalesBtn.setText("Individual");
+        jIndivQuaterSalesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jIndivQuaterSalesBtnMouseClicked(evt);
+            }
+        });
 
         jReports_Label.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jReports_Label.setText("Reports");
 
-        jButton17.setText("Individual");
+        jIndivMonthWidgetBtn.setText("Individual");
+        jIndivMonthWidgetBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jIndivMonthWidgetBtnMouseClicked(evt);
+            }
+        });
 
         jReports_Label1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jReports_Label1.setText("Customer Sales Report");
@@ -269,15 +342,40 @@ public class Switchboard extends javax.swing.JFrame {
         jReports_Label4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jReports_Label4.setText("Quarterly Salesperson Sales Report");
 
-        jButton18.setText("Individual");
+        jIndivCustSalesBtn.setText("Individual");
+        jIndivCustSalesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jIndivCustSalesBtnMouseClicked(evt);
+            }
+        });
 
-        jButton19.setText("All");
+        jAllCustSalesBtn.setText("All");
+        jAllCustSalesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jAllCustSalesBtnMouseClicked(evt);
+            }
+        });
 
-        jButton20.setText("All");
+        jAllMonthSalesBtn.setText("All");
+        jAllMonthSalesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jAllMonthSalesBtnMouseClicked(evt);
+            }
+        });
 
-        jButton21.setText("All");
+        jAllQuarterSalesBtn.setText("All");
+        jAllQuarterSalesBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jAllQuarterSalesBtnMouseClicked(evt);
+            }
+        });
 
-        jButton22.setText("All");
+        jAllMonthWidgetBtn.setText("All");
+        jAllMonthWidgetBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jAllMonthWidgetBtnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -290,17 +388,17 @@ public class Switchboard extends javax.swing.JFrame {
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton16)
-                            .addComponent(jButton15)
-                            .addComponent(jButton17)))
-                    .addComponent(jButton18, javax.swing.GroupLayout.Alignment.TRAILING))
+                            .addComponent(jIndivQuaterSalesBtn)
+                            .addComponent(jIndivMonthSalesBtn)
+                            .addComponent(jIndivMonthWidgetBtn)))
+                    .addComponent(jIndivCustSalesBtn, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton21)
-                        .addComponent(jButton20)
-                        .addComponent(jButton22))
-                    .addComponent(jButton19, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addComponent(jAllQuarterSalesBtn)
+                        .addComponent(jAllMonthSalesBtn)
+                        .addComponent(jAllMonthWidgetBtn))
+                    .addComponent(jAllCustSalesBtn, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -318,23 +416,23 @@ public class Switchboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jReports_Label1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton19, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton18, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jAllCustSalesBtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jIndivCustSalesBtn, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jReports_Label2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton20, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton15, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jAllMonthSalesBtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jIndivMonthSalesBtn, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(5, 5, 5)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jReports_Label4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton21, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton16, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jAllQuarterSalesBtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jIndivQuaterSalesBtn, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jReports_Label3, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton22, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton17, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(jAllMonthWidgetBtn, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jIndivMonthWidgetBtn, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -441,19 +539,97 @@ public class Switchboard extends javax.swing.JFrame {
 
     private void jCreateC_btnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCreateC_btnMouseReleased
         // TODO add your handling code here:
-       new createCustomerForm().setVisible(true);
+       new CreateCustomerForm().setVisible(true);
        
     }//GEN-LAST:event_jCreateC_btnMouseReleased
 
     private void jCreateW_btnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCreateW_btnMouseReleased
         // TODO add your handling code here:
-        new createWidgetForm().setVisible(true);
+        new CreateWidgetForm().setVisible(true);
     }//GEN-LAST:event_jCreateW_btnMouseReleased
 
     private void jRecordP_btnMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRecordP_btnMouseReleased
         // TODO add your handling code here:
-        new paymentForm().setVisible(true);
+        new PaymentForm().setVisible(true);
     }//GEN-LAST:event_jRecordP_btnMouseReleased
+
+    private void jCreateS_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCreateS_btnMouseClicked
+        // TODO add your handling code here:
+        new CreateSalespersonForm().setVisible(true);
+    }//GEN-LAST:event_jCreateS_btnMouseClicked
+
+    private void jSearchS_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSearchS_btnMouseClicked
+        // TODO add your handling code here:
+        new SearchSalespersonForm().setVisible(true);
+    }//GEN-LAST:event_jSearchS_btnMouseClicked
+
+    private void jEditC_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jEditC_btnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jEditC_btnMouseClicked
+
+    private void jSearchC_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSearchC_btnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jSearchC_btnMouseClicked
+
+    private void jEditS_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jEditS_btnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jEditS_btnMouseClicked
+
+    private void jCreateW_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCreateW_btnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCreateW_btnMouseClicked
+
+    private void jEditW_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jEditW_btnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jEditW_btnMouseClicked
+
+    private void jSearchW_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSearchW_btnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jSearchW_btnMouseClicked
+
+    private void jCreateI_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCreateI_btnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCreateI_btnMouseClicked
+
+    private void jDeleteI_btMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDeleteI_btMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jDeleteI_btMouseClicked
+
+    private void jSearchI_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSearchI_btnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jSearchI_btnMouseClicked
+
+    private void jIndivCustSalesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jIndivCustSalesBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jIndivCustSalesBtnMouseClicked
+
+    private void jIndivMonthSalesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jIndivMonthSalesBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jIndivMonthSalesBtnMouseClicked
+
+    private void jIndivQuaterSalesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jIndivQuaterSalesBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jIndivQuaterSalesBtnMouseClicked
+
+    private void jIndivMonthWidgetBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jIndivMonthWidgetBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jIndivMonthWidgetBtnMouseClicked
+
+    private void jAllCustSalesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jAllCustSalesBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jAllCustSalesBtnMouseClicked
+
+    private void jAllMonthSalesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jAllMonthSalesBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jAllMonthSalesBtnMouseClicked
+
+    private void jAllQuarterSalesBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jAllQuarterSalesBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jAllQuarterSalesBtnMouseClicked
+
+    private void jAllMonthWidgetBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jAllMonthWidgetBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jAllMonthWidgetBtnMouseClicked
 
     /**
      * @param args the command line arguments
@@ -486,18 +662,20 @@ public class Switchboard extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Switchboard().setVisible(true);
+                try {
+                    AccountDB.openDB();
+                } catch (SQLException ex) {
+                    Logger.getLogger(Switchboard.class.getName()).log(Level.SEVERE, null, ex);
+                }
+
             }
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton18;
-    private javax.swing.JButton jButton19;
-    private javax.swing.JButton jButton20;
-    private javax.swing.JButton jButton21;
-    private javax.swing.JButton jButton22;
+    private javax.swing.JButton jAllCustSalesBtn;
+    private javax.swing.JButton jAllMonthSalesBtn;
+    private javax.swing.JButton jAllMonthWidgetBtn;
+    private javax.swing.JButton jAllQuarterSalesBtn;
     private javax.swing.JButton jCreateC_btn;
     private javax.swing.JButton jCreateI_btn;
     private javax.swing.JButton jCreateS_btn;
@@ -507,6 +685,10 @@ public class Switchboard extends javax.swing.JFrame {
     private javax.swing.JButton jEditC_btn;
     private javax.swing.JButton jEditS_btn;
     private javax.swing.JButton jEditW_btn;
+    private javax.swing.JButton jIndivCustSalesBtn;
+    private javax.swing.JButton jIndivMonthSalesBtn;
+    private javax.swing.JButton jIndivMonthWidgetBtn;
+    private javax.swing.JButton jIndivQuaterSalesBtn;
     private javax.swing.JLabel jInvoices_Label;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -532,4 +714,6 @@ public class Switchboard extends javax.swing.JFrame {
     private javax.swing.JButton jSearchW_btn;
     private javax.swing.JLabel jWidgets_Label;
     // End of variables declaration//GEN-END:variables
+
+
 }

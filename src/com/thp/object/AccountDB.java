@@ -15,11 +15,12 @@ import java.sql.Statement;
  * @author user
  */
 public class AccountDB {
-    public String driver = "org.apache.derby.jdbc.EmbeddedDriver";
-    public String dbName="//localhost:1527/accountdb;";
-    public String connectionURL = "jdbc:derby:" + dbName; 
-    public Connection conn = null;
-    public void openDB() throws SQLException{
+    public static String driver = "org.apache.derby.jdbc.EmbeddedDriver";
+    public static String dbName="//localhost:1527/accountdb;";
+    public static String connectionURL = "jdbc:derby:" + dbName; 
+    public static Connection conn = null;
+    
+    public static void openDB() throws SQLException{
         try{ 
                 Class.forName(driver);
                 conn = DriverManager.getConnection(connectionURL);
@@ -27,7 +28,7 @@ public class AccountDB {
             System.out.println(e);
         }
     };
-    public void closeDB() throws SQLException{
+    public static void closeDB() throws SQLException{
         conn.close();
     };
 }

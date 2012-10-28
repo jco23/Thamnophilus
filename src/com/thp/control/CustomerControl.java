@@ -4,10 +4,9 @@
  */
 package com.thp.control;
 
-import com.thp.boundary.createCustomerForm;
+import com.thp.boundary.CreateCustomerForm;
 import com.thp.object.AccountDB;
 import com.thp.object.Customer;
-import com.thp.object.Person;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -23,25 +22,29 @@ public class CustomerControl {
         
     }
     public static Customer getCustomer(Customer cust){
-        AccountDB db = new AccountDB();
         try {
-            db.openDB();
-            Statement stmt = db.conn.createStatement();  
-            ResultSet rs = stmt.executeQuery("SELECT * FROM APP.DEPARTMENT");
+            AccountDB.openDB();
+            Statement stmt = AccountDB.conn.createStatement();  
+            ResultSet rs = stmt.executeQuery("SELECT * FROM APP.CUSTOMERS");
             
             while (rs.next()) {
-               cust.setPerson(rs.getString("NAME"), rs.getString("ID"), 12345678);
+               cust.setPerson(rs.getString("FIRSTNAME"), rs.getString("LASTNAME"), "12345678");
             }
             rs.close();
-            
-            db.closeDB();
         } catch (SQLException ex) {
-            Logger.getLogger(createCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(CreateCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
         }
         return cust;
     }
     
-    public static void createCustomer(){}
+    public static void createCustomer(Customer cust){
+        try {
+            Statement stmt = AccountDB.conn.createStatement();  
+            stmt.executeUpdate("INSERT INTO APP.CUSTOMERS (id, custtype, firstname, lastname) VALUES(5, 1, 'Dean', 'Chester')");
+        } catch (SQLException ex) {
+            Logger.getLogger(CreateCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     public static void editCustomer(){}
     public static void searchCustomer(){}
 }
