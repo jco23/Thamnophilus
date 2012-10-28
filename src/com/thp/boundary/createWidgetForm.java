@@ -41,17 +41,17 @@ public class createWidgetForm extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jCreateName = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jCreateDesc = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jCreateCost = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
+        jCreatePrice = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jCreateQuant = new javax.swing.JTextField();
+        jCreate = new javax.swing.JButton();
+        jCancel = new javax.swing.JButton();
 
         jDialog1.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -90,64 +90,64 @@ public class createWidgetForm extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Name:");
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jCreateName.setText("jTextField1");
+        jCreateName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jCreateNameActionPerformed(evt);
             }
         });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Description:");
 
-        jTextField2.setText("jTextField2");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jCreateDesc.setText("jTextField2");
+        jCreateDesc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jCreateDescActionPerformed(evt);
             }
         });
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Unit Cost Price: $");
 
-        jTextField3.setText("jTextField3");
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        jCreateCost.setText("jTextField3");
+        jCreateCost.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                jCreateCostActionPerformed(evt);
             }
         });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Unit Price: $");
 
-        jTextField4.setText("jTextField4");
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        jCreatePrice.setText("jTextField4");
+        jCreatePrice.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                jCreatePriceActionPerformed(evt);
             }
         });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Quantity:");
 
-        jTextField5.setText("jTextField5");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        jCreateQuant.setText("jTextField5");
+        jCreateQuant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                jCreateQuantActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Create");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jCreate.setText("Create");
+        jCreate.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButton1MouseReleased(evt);
+                jCreateMouseReleased(evt);
             }
         });
 
-        jButton2.setText("Cancel");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jCancel.setText("Cancel");
+        jCancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButton2MouseReleased(evt);
+                jCancelMouseReleased(evt);
             }
         });
 
@@ -166,15 +166,15 @@ public class createWidgetForm extends javax.swing.JFrame {
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
-                    .addComponent(jTextField2)
-                    .addComponent(jTextField3)
-                    .addComponent(jTextField4)
-                    .addComponent(jTextField5))
+                    .addComponent(jCreateName, javax.swing.GroupLayout.DEFAULT_SIZE, 153, Short.MAX_VALUE)
+                    .addComponent(jCreateDesc)
+                    .addComponent(jCreateCost)
+                    .addComponent(jCreatePrice)
+                    .addComponent(jCreateQuant))
                 .addGap(108, 108, 108)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
+                    .addComponent(jCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCancel, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -183,26 +183,26 @@ public class createWidgetForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField1)
-                        .addComponent(jButton1))
+                        .addComponent(jCreateName)
+                        .addComponent(jCreate))
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(jCreateDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCancel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCreateCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCreatePrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jCreateQuant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(167, Short.MAX_VALUE))
         );
 
@@ -232,12 +232,12 @@ public class createWidgetForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jCreateNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCreateNameActionPerformed
         // TODO add your handling code here:
-        jTextField1.getText();  //assign to name of instance of widget
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        jCreateName.getText();  //assign to name of instance of widget
+    }//GEN-LAST:event_jCreateNameActionPerformed
 
-    private void jButton1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseReleased
+    private void jCreateMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCreateMouseReleased
         // TODO add your handling code here:
         String driver = "org.apache.derby.jdbc.EmbeddedDriver";
         String dbName = "//localhost:1527/ardatabase;";
@@ -257,11 +257,11 @@ public class createWidgetForm extends javax.swing.JFrame {
             ResultSet rs = stmt.executeQuery("Select * From APP.WIDGET");
             
             rs.moveToInsertRow();
-            rs.updateString("NAME", jTextField1.getText());
-            rs.updateString("DESCRIPTION", jTextField2.getText());
-            rs.updateString("COST", jTextField3.getText());
-            rs.updateString("PRICE",jTextField4.getText());
-            rs.updateString("QUANTITY", jTextField5.getText());
+            rs.updateString("NAME", jCreateName.getText());
+            rs.updateString("DESCRIPTION", jCreateDesc.getText());
+            rs.updateString("COST", jCreateCost.getText());
+            rs.updateString("PRICE",jCreatePrice.getText());
+            rs.updateString("QUANTITY", jCreateQuant.getText());
             rs.insertRow();
             stmt.close();
             rs.close();
@@ -270,40 +270,40 @@ public class createWidgetForm extends javax.swing.JFrame {
             
             
         }catch(SQLException e){System.err.print(e);}
-    }//GEN-LAST:event_jButton1MouseReleased
+    }//GEN-LAST:event_jCreateMouseReleased
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jCreateDescActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCreateDescActionPerformed
         // TODO add your handling code here:
-        jTextField2.getText();
-    }//GEN-LAST:event_jTextField2ActionPerformed
+        jCreateDesc.getText();
+    }//GEN-LAST:event_jCreateDescActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void jCreateCostActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCreateCostActionPerformed
         // TODO add your handling code here:
-        jTextField3.getText();
-    }//GEN-LAST:event_jTextField3ActionPerformed
+        jCreateCost.getText();
+    }//GEN-LAST:event_jCreateCostActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void jCreatePriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCreatePriceActionPerformed
         // TODO add your handling code here:
-        jTextField4.getText();
-    }//GEN-LAST:event_jTextField4ActionPerformed
+        jCreatePrice.getText();
+    }//GEN-LAST:event_jCreatePriceActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void jCreateQuantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCreateQuantActionPerformed
         // TODO add your handling code here:
-        jTextField5.getText();
-    }//GEN-LAST:event_jTextField5ActionPerformed
+        jCreateQuant.getText();
+    }//GEN-LAST:event_jCreateQuantActionPerformed
 
-    private void jButton2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseReleased
+    private void jCancelMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCancelMouseReleased
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_jButton2MouseReleased
+    }//GEN-LAST:event_jCancelMouseReleased
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        jTextField1.setText("");
-        jTextField2.setText("");
-        jTextField3.setText("");
-        jTextField4.setText("");
-        jTextField5.setText("");
+        jCreateName.setText("");
+        jCreateDesc.setText("");
+        jCreateCost.setText("");
+        jCreatePrice.setText("");
+        jCreateQuant.setText("");
     }//GEN-LAST:event_formWindowOpened
 
     private void jDialog1WindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jDialog1WindowOpened
@@ -347,8 +347,13 @@ public class createWidgetForm extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jCancel;
+    private javax.swing.JButton jCreate;
+    private javax.swing.JTextField jCreateCost;
+    private javax.swing.JTextField jCreateDesc;
+    private javax.swing.JTextField jCreateName;
+    private javax.swing.JTextField jCreatePrice;
+    private javax.swing.JTextField jCreateQuant;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -358,10 +363,5 @@ public class createWidgetForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
