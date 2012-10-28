@@ -286,7 +286,6 @@ public class editWidgetForm extends javax.swing.JFrame {
         String connectionURL = "jdbc:derby:" + dbName;
         Connection conn = null;
         boolean found = false;
-        
         try
         {
             Class.forName(driver);
@@ -340,7 +339,13 @@ public class editWidgetForm extends javax.swing.JFrame {
         String connectionURL = "jdbc:derby:" + dbName;
         Connection conn = null;
         boolean found = false;
-        
+        try
+        {
+            Integer.parseInt(jEditQuant.getText());
+            Double.parseDouble(jEditCost.getText());
+            Double.parseDouble(jEditPrice.getText());
+        }catch(NumberFormatException e){System.out.println(e);}
+
         try
         {
             Class.forName(driver);

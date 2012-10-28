@@ -243,6 +243,12 @@ public class createWidgetForm extends javax.swing.JFrame {
         String dbName = "//localhost:1527/ardatabase;";
         String connectionURL = "jdbc:derby:" + dbName;
         Connection conn = null;
+        try
+        {
+            Integer.parseInt(jCreateQuant.getText());
+            Double.parseDouble(jCreateCost.getText());
+            Double.parseDouble(jCreatePrice.getText());
+        }catch(NumberFormatException e){System.out.println(e);}
         
         try
         {
