@@ -158,9 +158,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jEditC_btnMouseClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jCustomer_Label">
           <Properties>
@@ -174,9 +171,6 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Search"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jSearchC_btnMouseClicked"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -238,7 +232,6 @@
             <Property name="text" type="java.lang.String" value="Create"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jCreateW_btnMouseClicked"/>
             <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jCreateW_btnMouseReleased"/>
           </Events>
         </Component>
@@ -246,17 +239,11 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jEditW_btnMouseClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jSearchW_btn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Search"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jSearchW_btnMouseClicked"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -317,25 +304,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Create"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jCreateI_btnMouseClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jDeleteI_bt">
           <Properties>
             <Property name="text" type="java.lang.String" value="Delete"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jDeleteI_btMouseClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jSearchI_btn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Search"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jSearchI_btnMouseClicked"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -397,25 +375,16 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Create"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jCreateS_btnMouseClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jEditS_btn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Edit"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jEditS_btnMouseClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jSearchS_btn">
           <Properties>
             <Property name="text" type="java.lang.String" value="Search"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jSearchS_btnMouseClicked"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -438,21 +407,21 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jIndivQuaterSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jIndivMonthSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                              <Component id="jIndivMonthWidgetBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton16" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton15" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton17" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Component id="jIndivCustSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton18" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                          <Component id="jAllQuarterSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jAllMonthSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jAllMonthWidgetBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton21" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton20" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton22" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jAllCustSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton19" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -475,26 +444,26 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jReports_Label1" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jAllCustSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jIndivCustSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton19" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton18" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jReports_Label2" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jAllMonthSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jIndivMonthSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton20" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton15" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jReports_Label4" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jAllQuarterSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jIndivQuaterSalesBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton21" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton16" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jReports_Label3" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jAllMonthWidgetBtn" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jIndivMonthWidgetBtn" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton22" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton17" alignment="1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="18" max="32767" attributes="0"/>
               </Group>
@@ -502,21 +471,15 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="jIndivMonthSalesBtn">
+        <Component class="javax.swing.JButton" name="jButton15">
           <Properties>
             <Property name="text" type="java.lang.String" value="Individual"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jIndivMonthSalesBtnMouseClicked"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jIndivQuaterSalesBtn">
+        <Component class="javax.swing.JButton" name="jButton16">
           <Properties>
             <Property name="text" type="java.lang.String" value="Individual"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jIndivQuaterSalesBtnMouseClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jReports_Label">
           <Properties>
@@ -526,13 +489,10 @@
             <Property name="text" type="java.lang.String" value="Reports"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jIndivMonthWidgetBtn">
+        <Component class="javax.swing.JButton" name="jButton17">
           <Properties>
             <Property name="text" type="java.lang.String" value="Individual"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jIndivMonthWidgetBtnMouseClicked"/>
-          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jReports_Label1">
           <Properties>
@@ -566,45 +526,30 @@
             <Property name="text" type="java.lang.String" value="Quarterly Salesperson Sales Report"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jIndivCustSalesBtn">
+        <Component class="javax.swing.JButton" name="jButton18">
           <Properties>
             <Property name="text" type="java.lang.String" value="Individual"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jIndivCustSalesBtnMouseClicked"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jAllCustSalesBtn">
+        <Component class="javax.swing.JButton" name="jButton19">
           <Properties>
             <Property name="text" type="java.lang.String" value="All"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jAllCustSalesBtnMouseClicked"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jAllMonthSalesBtn">
+        <Component class="javax.swing.JButton" name="jButton20">
           <Properties>
             <Property name="text" type="java.lang.String" value="All"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jAllMonthSalesBtnMouseClicked"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jAllQuarterSalesBtn">
+        <Component class="javax.swing.JButton" name="jButton21">
           <Properties>
             <Property name="text" type="java.lang.String" value="All"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jAllQuarterSalesBtnMouseClicked"/>
-          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="jAllMonthWidgetBtn">
+        <Component class="javax.swing.JButton" name="jButton22">
           <Properties>
             <Property name="text" type="java.lang.String" value="All"/>
           </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jAllMonthWidgetBtnMouseClicked"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

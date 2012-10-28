@@ -9,189 +9,40 @@ package com.thp.object;
  *
  * @author Joanne Co
  */
-public class Customer {
+public class Customer{
     Person person = new Person();
     int id;
     boolean type;
-    String company;
     String soldToAddress;
     String soldToCity;
     String soldToState;
     int soldToZipCode;
     String shipToAddress;
     String shipToCity;
-    String shipToState;
+    String shipTopState;
     int shipToZipCode;
-    long fax;
+    int fax;
     String email;
-    String contact;
+    String contactInfo;
     boolean preference;
     int discount;
     String termsCode;
-    double taxRate;
-    int salespersonId;
+    int taxRate;
     
-    public Customer(){
-        setCustomer("","","",0,0,"","","","","","","","","","",true,"","",0,0);
-    }
-
-    public Customer(String fn, 
-                    String ln, 
-                    String cp, 
-                    long tel, 
-                    long fax, 
-                    String em, 
-                    String ct, 
-                    String soldAddr, 
-                    String soldCity, 
-                    String soldState, 
-                    String soldZip, 
-                    String shipAddr, 
-                    String shipCity, 
-                    String shipState, 
-                    String shipZip, 
-                    boolean pref, 
-                    String sp,
-                    String terms, 
-                    int dRate, 
-                    double tRate) {
-    }
- //Set functions
-    public void setCustomer(String fn,
-                            String ln,
-                            String cp,
-                            long tel,
-                            long fx,
-                            String em,
-                            String ct,
-                            String soldAddr,
-                            String soldCity,
-                            String soldState,
-                            String soldZip,
-                            String shipAddr,
-                            String shipCity,
-                            String shipState,
-                            String shipZip,
-                            boolean pref,
-                            String sp,
-                            String terms,
-                            int dRate,
-                            double tRate){
-        setPerson(fn, ln, Long.toString(tel));
-        setFax(fax);
-        setEmail(em);
-        setContact(ct);
-        setSoldToAddress(soldAddr,soldCity,soldState,soldZip);
-        setShipToAddress(shipAddr, shipCity, shipState, shipZip);
-        setPreference(pref);
-        setSalesPerson(sp);
-        setTermsCode(terms);
-        setDiscountRate(dRate);
-        setTaxRate(tRate);
-        
-    }
-
-    public void setPerson(String fn, String ln, String tel){
+    public Customer(){}
+    public void setPerson(String fn, String ln, int tel){
         person.firstName = fn;
         person.lastName = ln;
         person.phone = tel;
     }
-    public void setFax(long fx){
-        fax=fx;
-    }
-    
-    public void setEmail(String em){
-        email=em;
-    }
-    public void setContact(String ct){
-        contact=ct;
-    }
-    public void setSoldToAddress(String soldAddr, String soldCity, String soldState, String soldZip){
-        soldToAddress=soldAddr;
-        soldToCity=soldCity;
-        soldToState=soldState;
-        soldToZipCode=Integer.parseInt(soldZip);
-    
-    }
-    public void setShipToAddress(String shipAddr, String shipCity, String shipState, String shipZip){
-        shipToAddress=shipAddr;
-        shipToCity=shipCity;
-        shipToState=shipState;
-        shipToZipCode=Integer.parseInt(shipZip);    
-    }
-    public void setPreference(boolean pref){
-        preference=pref;
-    }
-    public void setSalesPerson(String sp){
-       salespersonId = 1;
-    }
-    public void setTermsCode(String terms){
-        termsCode=terms;
-    }
-    public void setDiscountRate(int dRate){
-        discount=dRate;
-    }
-    public void setTaxRate(double tRate){  
-        taxRate=tRate;
-    }
-    
-// GET Functions  
     public String getFirstName(){
         return person.firstName;
     }
     public String getLastName(){
         return person.lastName;
     }
-    public String getPhone(){
+    public int getPhone(){
         return person.phone;
-    }
-    public String getCompany(){
-        return company;
-    }
-    public long getFax(){
-        return fax;
-    }
-    public String getEmail(){
-        return email;
-    }
-    public String getSoldToAddress(){
-        return soldToAddress;
-    }
-    public String getSoldToCity(){
-        return soldToCity;
-    }
-    public String getSoldToState(){
-        return soldToState;
-    }
-    public int getSoldToZip(){
-        return soldToZipCode;
-    }
-    public String getShipToAddress(){
-        return shipToAddress;
-    }
-    public String getShipToCity(){
-        return shipToCity;
-    }
-    public String getShipToState(){
-        return shipToState;
-    }
-    public int getShipToZip(){
-        return shipToZipCode;
-    }
-    public boolean getPreference(){
-        return preference;
-    }
-    public int getSalesperson(){
-        return salespersonId;
-    }
-    public String getTermsCode(){
-        return termsCode;
-    }
-    public int getDiscountRate(){
-        return discount;
-    }
-    public double getTaxRate(){
-        return taxRate;
     }
     
     
