@@ -44,20 +44,20 @@ public class searchWidgetForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
-        jTextField6 = new javax.swing.JTextField();
+        jMatchName = new javax.swing.JTextField();
+        jMatchCost = new javax.swing.JTextField();
+        jMatchPrice = new javax.swing.JTextField();
+        jMatchQuantity = new javax.swing.JTextField();
+        jMatchOk = new javax.swing.JButton();
+        jMatchDescription = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jDesiredWidget = new javax.swing.JTextField();
+        jSearchButton = new javax.swing.JButton();
+        jCancelSearch = new javax.swing.JButton();
 
         jFrame1.addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
@@ -76,27 +76,27 @@ public class searchWidgetForm extends javax.swing.JFrame {
 
         jLabel7.setText("Quantity");
 
-        jTextField2.setEditable(false);
-        jTextField2.setText("jTextField2");
+        jMatchName.setEditable(false);
+        jMatchName.setText("jTextField2");
 
-        jTextField3.setEditable(false);
-        jTextField3.setText("jTextField3");
+        jMatchCost.setEditable(false);
+        jMatchCost.setText("jTextField3");
 
-        jTextField4.setEditable(false);
-        jTextField4.setText("jTextField4");
+        jMatchPrice.setEditable(false);
+        jMatchPrice.setText("jTextField4");
 
-        jTextField5.setEditable(false);
-        jTextField5.setText("jTextField5");
+        jMatchQuantity.setEditable(false);
+        jMatchQuantity.setText("jTextField5");
 
-        jButton3.setText("OK");
-        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+        jMatchOk.setText("OK");
+        jMatchOk.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButton3MouseReleased(evt);
+                jMatchOkMouseReleased(evt);
             }
         });
 
-        jTextField6.setEditable(false);
-        jTextField6.setText("jTextField6");
+        jMatchDescription.setEditable(false);
+        jMatchDescription.setText("jTextField6");
 
         jLabel8.setText("Description");
 
@@ -116,13 +116,13 @@ public class searchWidgetForm extends javax.swing.JFrame {
                 .addGap(53, 53, 53))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jFrame1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jMatchName, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jMatchCost, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jMatchPrice, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jMatchQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(41, 41, 41))
             .addGroup(jFrame1Layout.createSequentialGroup()
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -131,10 +131,10 @@ public class searchWidgetForm extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(jFrame1Layout.createSequentialGroup()
                         .addGap(169, 169, 169)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jMatchOk, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jFrame1Layout.createSequentialGroup()
                         .addGap(100, 100, 100)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jMatchDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jFrame1Layout.createSequentialGroup()
                         .addGap(180, 180, 180)
                         .addComponent(jLabel8)))
@@ -153,16 +153,16 @@ public class searchWidgetForm extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jMatchName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jMatchCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jMatchPrice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jMatchQuantity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jMatchDescription, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton3)
+                .addComponent(jMatchOk)
                 .addGap(19, 19, 19))
         );
 
@@ -179,24 +179,24 @@ public class searchWidgetForm extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Name:");
 
-        jTextField1.setText("jTextField1");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jDesiredWidget.setText("jTextField1");
+        jDesiredWidget.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jDesiredWidgetActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Search");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jSearchButton.setText("Search");
+        jSearchButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButton1MouseReleased(evt);
+                jSearchButtonMouseReleased(evt);
             }
         });
 
-        jButton2.setText("Cancel");
-        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jCancelSearch.setText("Cancel");
+        jCancelSearch.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                jButton2MouseReleased(evt);
+                jCancelSearchMouseReleased(evt);
             }
         });
 
@@ -208,13 +208,13 @@ public class searchWidgetForm extends javax.swing.JFrame {
                 .addGap(220, 220, 220)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDesiredWidget, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jCancelSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                    .addComponent(jSearchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(313, 313, 313))
         );
         jPanel2Layout.setVerticalGroup(
@@ -223,11 +223,11 @@ public class searchWidgetForm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTextField1))
+                    .addComponent(jDesiredWidget))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
+                .addComponent(jSearchButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
+                .addComponent(jCancelSearch)
                 .addGap(387, 387, 387))
         );
 
@@ -269,12 +269,12 @@ public class searchWidgetForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jDesiredWidgetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDesiredWidgetActionPerformed
         // TODO add your handling code here:
-        jTextField1.getText();  //assign to name of instance of widget
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        jDesiredWidget.getText();  //assign to name of instance of widget
+    }//GEN-LAST:event_jDesiredWidgetActionPerformed
 
-    private void jButton1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseReleased
+    private void jSearchButtonMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSearchButtonMouseReleased
         // TODO add your handling code here:
         String driver = "org.apache.derby.jdbc.EmbeddedDriver";
         String dbName = "//localhost:1527/ardatabase;";
@@ -296,31 +296,31 @@ public class searchWidgetForm extends javax.swing.JFrame {
             
             while(rs.next())
             {
-                if(jTextField1.getText().equalsIgnoreCase(rs.getString("NAME")))
+                if(jDesiredWidget.getText().equalsIgnoreCase(rs.getString("NAME")))
                 {
-                    jTextField2.setText(rs.getString(1));
-                    jTextField3.setText(rs.getString(3));
-                    jTextField4.setText(rs.getString(4));
-                    jTextField5.setText(rs.getString(5));
-                    jTextField6.setText(rs.getString(2));
+                    jMatchName.setText(rs.getString(1));
+                    jMatchCost.setText(rs.getString(3));
+                    jMatchPrice.setText(rs.getString(4));
+                    jMatchQuantity.setText(rs.getString(5));
+                    jMatchDescription.setText(rs.getString(2));
                     jFrame1.setVisible(true);
                     found = true;
                 }
             }
             if(found == false)
             {
-                    jTextField1.setText("NO MATCH FOUND!");
+                    jDesiredWidget.setText("NO MATCH FOUND!");
             }
             stmt.close();
             rs.close();
             
 
         }catch(SQLException e){System.err.print(e);}
-    }//GEN-LAST:event_jButton1MouseReleased
+    }//GEN-LAST:event_jSearchButtonMouseReleased
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        jTextField1.setText("");
+        jDesiredWidget.setText("");
     }//GEN-LAST:event_formWindowOpened
 
     private void jFrame1WindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_jFrame1WindowOpened
@@ -329,15 +329,15 @@ public class searchWidgetForm extends javax.swing.JFrame {
         jFrame1.setLocation(80,200);
     }//GEN-LAST:event_jFrame1WindowOpened
 
-    private void jButton2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseReleased
+    private void jCancelSearchMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCancelSearchMouseReleased
         // TODO add your handling code here:
         this.dispose();
-    }//GEN-LAST:event_jButton2MouseReleased
+    }//GEN-LAST:event_jCancelSearchMouseReleased
 
-    private void jButton3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseReleased
+    private void jMatchOkMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMatchOkMouseReleased
         // TODO add your handling code here:
         jFrame1.dispose();
-    }//GEN-LAST:event_jButton3MouseReleased
+    }//GEN-LAST:event_jMatchOkMouseReleased
 
     /**
      * @param args the command line arguments
@@ -374,9 +374,8 @@ public class searchWidgetForm extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jCancelSearch;
+    private javax.swing.JTextField jDesiredWidget;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -386,13 +385,14 @@ public class searchWidgetForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JTextField jMatchCost;
+    private javax.swing.JTextField jMatchDescription;
+    private javax.swing.JTextField jMatchName;
+    private javax.swing.JButton jMatchOk;
+    private javax.swing.JTextField jMatchPrice;
+    private javax.swing.JTextField jMatchQuantity;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JButton jSearchButton;
     // End of variables declaration//GEN-END:variables
 }
