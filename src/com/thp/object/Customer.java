@@ -1,5 +1,10 @@
 package com.thp.object;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -31,7 +36,7 @@ public class Customer extends Person {
     double taxRate;
     int salespersonId;
     
-    public Customer(){
+    public Customer() throws SQLException{
         setCustomer("","","",0,0,"","","","","","","","","","",true,"","",0,0);
     }
 
@@ -54,7 +59,7 @@ public class Customer extends Person {
                     String sp,
                     String terms, 
                     int dRate, 
-                    double tRate) {
+                    double tRate) throws SQLException {
         setCustomer(fn,ln,cp,tel,fax,em,ct,soldAddr,soldCity,soldState,soldZip,shipAddr,shipCity, shipState,shipZip,pref,sp,terms,dRate,tRate);
     }
  //Set functions
@@ -77,7 +82,7 @@ public class Customer extends Person {
                             String sp,
                             String terms,
                             int dRate,
-                            double tRate){
+                            double tRate) throws SQLException{
         setPerson(fn, ln);
         setPhone(tel);
         setFax(fx);
@@ -130,8 +135,16 @@ public class Customer extends Person {
     public void setPreference(boolean pref){
         preference=pref;
     }
-    public void setSalesPerson(String sp){
-       salespersonId = 1;
+    public void setSalesPerson(String sp) throws SQLException{
+       String name[] = sp.split(" ");
+       Statement stmt = AccountDB.conn.createStatement();
+       String sql = "SELECT ID FROM APP.SALESPEOPLE WHERE FIRSTNAME='" + 
+                    name[0] + "' AND LASTNAME = '" + name[1] + "'";
+       ResultSet rs = stmt.executeQuery(sql);
+       while(rs.next()){
+            salespersonId = rs.getInt("ID");
+       }
+       rs.close();
     }
     public void setTermsCode(String terms){
         termsCode=terms;
