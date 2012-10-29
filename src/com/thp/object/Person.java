@@ -12,18 +12,16 @@ package com.thp.object;
 public class Person {
     String firstName;
     String lastName;
-    long phone;
     
     public Person(){
-        setPerson("","",0);
+        setPerson("","");
     }
-    public Person(String fn, String ln, long tel){
-        setPerson(fn, ln, tel);
+    public Person(String fn, String ln){
+        setPerson(fn, ln);
     }
-    public void setPerson(String fn, String ln, long tel){
+    public void setPerson(String fn, String ln){
         firstName=fn;
         lastName=ln;
-        phone=tel;
     }
     
     public String getFirstName(){
@@ -34,7 +32,4 @@ public class Person {
         return lastName;
     }
     
-    public long getPhone(){
-        return phone;
-    }
 }
