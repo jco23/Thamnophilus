@@ -2,7 +2,13 @@ package com.thp.boundary;//GEN-FIRST:event_jAddUpdateBtnMouseClicked
 //GEN-LAST:event_jAddUpdateBtnMouseClicked
 
 import com.thp.control.CustomerControl;
+import com.thp.object.AccountDB;
 import com.thp.object.Customer;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /*
  * To change this template, choose Tools | Templates
@@ -33,6 +39,7 @@ public class CreateCustomerForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jPreferenceRdo = new javax.swing.JPanel();
         jByEmailRdo = new javax.swing.JRadioButton();
@@ -54,7 +61,7 @@ public class CreateCustomerForm extends javax.swing.JFrame {
         jLocationLbl5 = new javax.swing.JLabel();
         jLocationLbl6 = new javax.swing.JLabel();
         jLocationLbl7 = new javax.swing.JLabel();
-        jShipZipCodeTxt = new javax.swing.JComboBox();
+        jShipZipCodeCb = new javax.swing.JComboBox();
         jShipStateCb = new javax.swing.JComboBox();
         jPanel4 = new javax.swing.JPanel();
         jFirstNameTxt = new javax.swing.JTextField();
@@ -64,7 +71,6 @@ public class CreateCustomerForm extends javax.swing.JFrame {
         jCompanyTxt = new javax.swing.JTextField();
         jNameLbl = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jPhoneTxt = new javax.swing.JTextField();
         jTitleLbl1 = new javax.swing.JLabel();
         jPriceLbl1 = new javax.swing.JLabel();
         jFaxTxt = new javax.swing.JTextField();
@@ -72,6 +78,7 @@ public class CreateCustomerForm extends javax.swing.JFrame {
         jNameLbl1 = new javax.swing.JLabel();
         jContactTxt = new javax.swing.JTextField();
         jNameLbl2 = new javax.swing.JLabel();
+        jPhoneTxt = new javax.swing.JFormattedTextField();
         jPanel6 = new javax.swing.JPanel();
         jTitleLbl2 = new javax.swing.JLabel();
         jPriceLbl2 = new javax.swing.JLabel();
@@ -88,13 +95,20 @@ public class CreateCustomerForm extends javax.swing.JFrame {
         jCancelBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Customer Information"));
 
         jPreferenceRdo.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        buttonGroup1.add(jByEmailRdo);
         jByEmailRdo.setText("By Email");
 
+        buttonGroup1.add(jByMailRdo);
         jByMailRdo.setText("By Mail");
 
         javax.swing.GroupLayout jPreferenceRdoLayout = new javax.swing.GroupLayout(jPreferenceRdo);
@@ -138,7 +152,6 @@ public class CreateCustomerForm extends javax.swing.JFrame {
         jSoldZipCodeCb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jSoldStateCb.setEditable(true);
-        jSoldStateCb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -164,7 +177,7 @@ public class CreateCustomerForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jSoldZipCodeCb, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSoldAddressTxt))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,11 +213,10 @@ public class CreateCustomerForm extends javax.swing.JFrame {
         jLocationLbl7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLocationLbl7.setText("Zip Code:");
 
-        jShipZipCodeTxt.setEditable(true);
-        jShipZipCodeTxt.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jShipZipCodeCb.setEditable(true);
+        jShipZipCodeCb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jShipStateCb.setEditable(true);
-        jShipStateCb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -228,9 +240,9 @@ public class CreateCustomerForm extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLocationLbl7, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jShipZipCodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jShipZipCodeCb, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jShipAddressTxt))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,7 +259,7 @@ public class CreateCustomerForm extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLocationLbl6)
                     .addComponent(jLocationLbl7)
-                    .addComponent(jShipZipCodeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jShipZipCodeCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jShipStateCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -312,6 +324,12 @@ public class CreateCustomerForm extends javax.swing.JFrame {
         jNameLbl2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jNameLbl2.setText("Contact:");
 
+        try {
+            jPhoneTxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(###) ###-####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -325,10 +343,10 @@ public class CreateCustomerForm extends javax.swing.JFrame {
                     .addComponent(jNameLbl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jEmailTxt, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jEmailTxt, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
                     .addComponent(jFaxTxt, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPhoneTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
-                    .addComponent(jContactTxt))
+                    .addComponent(jContactTxt)
+                    .addComponent(jPhoneTxt))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -370,10 +388,9 @@ public class CreateCustomerForm extends javax.swing.JFrame {
         jNameLbl4.setText("Sales Tax:");
 
         jTermsCodeCb.setEditable(true);
-        jTermsCodeCb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jTermsCodeCb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "End of the Month", "30", "60" }));
 
         jSalespersonCb.setEditable(true);
-        jSalespersonCb.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jNameLbl5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jNameLbl5.setText("%");
@@ -469,7 +486,7 @@ public class CreateCustomerForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
@@ -504,33 +521,29 @@ public class CreateCustomerForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(686, Short.MAX_VALUE)
-                .addComponent(jCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jCreateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(251, 251, 251)
-                            .addComponent(jLabel1))
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(32, 32, 32)
+                .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCreateBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(43, 43, 43)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCreateBtn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(10, 10, 10))
         );
 
         pack();
@@ -539,11 +552,13 @@ public class CreateCustomerForm extends javax.swing.JFrame {
     private void jCreateBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCreateBtnMouseClicked
         // TODO add your handling code here:
         //pass each data item into the database
-            Customer cust = new Customer();
+            Customer cust;
+        try {
+            cust = new Customer();
             cust.setCustomer(this.jFirstNameTxt.getText(), 
                             this.jLastNameTxt.getText(),
                             this.jCompanyTxt.getText(),
-                            Long.parseLong(this.jPhoneTxt.getText()),
+                            Long.parseLong(this.jPhoneTxt.getText().replaceAll("[-()]", "")),
                             Long.parseLong(this.jFaxTxt.getText()),
                             this.jEmailTxt.getText(),
                             this.jContactTxt.getText(),
@@ -554,20 +569,45 @@ public class CreateCustomerForm extends javax.swing.JFrame {
                             this.jShipAddressTxt.getText(),
                             this.jShipCityTxt.getText(),
                             this.jShipStateCb.getSelectedItem().toString(), 
-                            this.jShipZipCodeTxt.getSelectedItem().toString(),
+                            this.jShipZipCodeCb.getSelectedItem().toString(),
                             this.jByEmailRdo.isSelected(),
                             this.jSalespersonCb.getSelectedItem().toString(),
                             this.jTermsCodeCb.getSelectedItem().toString(),
                             Integer.parseInt(this.jDiscountRateTxt.getText()),
                             Double.parseDouble(this.jTaxRateTxt.getText()));
             CustomerControl.createCustomer(cust);
-            //jNameTxt.setText(Integer.toString(cust.getPhone()));
+         } catch (SQLException ex) {
+            Logger.getLogger(CreateCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jCreateBtnMouseClicked
 
     private void jCancelBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCancelBtnMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
     }//GEN-LAST:event_jCancelBtnMouseClicked
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        try {
+            Statement stmt = AccountDB.conn.createStatement();
+            String sql = "SELECT STATE FROM APP.STATES";
+            ResultSet rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                this.jShipStateCb.addItem(rs.getString("STATE"));
+                this.jSoldStateCb.addItem(rs.getString("STATE"));
+            }
+            rs.close();
+           
+            sql = "SELECT ID, FIRSTNAME, LASTNAME FROM APP.SALESPEOPLE";
+            rs = stmt.executeQuery(sql);
+            while(rs.next()){
+                this.jSalespersonCb.addItem(rs.getString("FIRSTNAME") + " " + rs.getString("LASTNAME"));
+            }
+            rs.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(CreateCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -604,6 +644,7 @@ public class CreateCustomerForm extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JRadioButton jByEmailRdo;
     private javax.swing.JRadioButton jByMailRdo;
     private javax.swing.JButton jCancelBtn;
@@ -637,7 +678,7 @@ public class CreateCustomerForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JTextField jPhoneTxt;
+    private javax.swing.JFormattedTextField jPhoneTxt;
     private javax.swing.JPanel jPreferenceRdo;
     private javax.swing.JLabel jPriceLbl;
     private javax.swing.JLabel jPriceLbl1;
@@ -646,7 +687,7 @@ public class CreateCustomerForm extends javax.swing.JFrame {
     private javax.swing.JTextField jShipAddressTxt;
     private javax.swing.JTextField jShipCityTxt;
     private javax.swing.JComboBox jShipStateCb;
-    private javax.swing.JComboBox jShipZipCodeTxt;
+    private javax.swing.JComboBox jShipZipCodeCb;
     private javax.swing.JTextField jSoldAddressTxt;
     private javax.swing.JTextField jSoldCityTxt;
     private javax.swing.JComboBox jSoldStateCb;
