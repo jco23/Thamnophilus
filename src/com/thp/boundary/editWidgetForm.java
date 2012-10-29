@@ -282,7 +282,7 @@ public class editWidgetForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         // TODO add your handling code here:
         String driver = "org.apache.derby.jdbc.EmbeddedDriver";
-        String dbName = "//localhost:1527/ardatabase;";
+        String dbName = "//localhost:1527/accountdb;";
         String connectionURL = "jdbc:derby:" + dbName;
         Connection conn = null;
         boolean found = false;
@@ -335,7 +335,7 @@ public class editWidgetForm extends javax.swing.JFrame {
     private void jSaveMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSaveMouseReleased
         // TODO add your handling code here:
         String driver = "org.apache.derby.jdbc.EmbeddedDriver";
-        String dbName = "//localhost:1527/ardatabase;";
+        String dbName = "//localhost:1527/accountdb;";
         String connectionURL = "jdbc:derby:" + dbName;
         Connection conn = null;
         boolean found = false;

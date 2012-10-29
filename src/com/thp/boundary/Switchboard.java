@@ -585,17 +585,17 @@ public class Switchboard extends javax.swing.JFrame {
 
     private void jCreateW_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCreateW_btnMouseClicked
         // TODO add your handling code here:
-        new CreateWidgetForm().setVisible(true);
+        new createWidgetForm().setVisible(true);
     }//GEN-LAST:event_jCreateW_btnMouseClicked
 
     private void jEditW_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jEditW_btnMouseClicked
         // TODO add your handling code here:
-        new EditWidgetForm().setVisible(true);
+        new editWidgetForm().setVisible(true);
     }//GEN-LAST:event_jEditW_btnMouseClicked
 
     private void jSearchW_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSearchW_btnMouseClicked
         // TODO add your handling code here:
-        new SearchWidgetForm().setVisible(true);
+        new searchWidgetForm().setVisible(true);
     }//GEN-LAST:event_jSearchW_btnMouseClicked
 
     private void jSearchS_btnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jSearchS_btnMouseClicked
