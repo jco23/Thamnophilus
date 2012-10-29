@@ -11,6 +11,6 @@ package com.thp.control;
 public class WidgetControl {
     WidgetControl(){}
     public static void createWidget(){}
-    public static void deleteWidget(){}
+    public static void editWidget(){}
     public static void searchWidget(){}    
 }
