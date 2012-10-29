@@ -9,5 +9,8 @@ package com.thp.control;
  * @author user
  */
 public class InvoiceControl {
-    
+    InvoiceControl(){}
+    public static void createInvoice(){}
+    public static void deleteInvoice(){}
+    public static void searchInvoice(){} 
 }
