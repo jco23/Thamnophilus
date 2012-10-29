@@ -1,24 +1,9 @@
 package com.thp.boundary;
 
 
-import com.thp.control.CustomerControl;
 import com.thp.control.SalespersonControl;
-import com.thp.object.AccountDB;
-import com.thp.object.Customer;
-import com.thp.object.Person;
 import com.thp.object.Salesperson;
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.TextField;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /*
  * To change this template, choose Tools | Templates
@@ -240,8 +225,7 @@ public class CreateSalespersonForm extends javax.swing.JFrame {
     private void jCreateBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCreateBtnMouseClicked
         // TODO add your handling code here:
         //pass each data item into the database
-        Salesperson salesperson = new Salesperson();
-        salesperson.setSalesperson(this.jFirstNameTxt.getText(), this.jLastNameTxt.getText(), Long.parseLong(this.jPhoneTxt.getText()));
+        Salesperson salesperson = new Salesperson(this.jFirstNameTxt.getText(), this.jLastNameTxt.getText(), Long.parseLong(this.jPhoneTxt.getText()));
         String msg = SalespersonControl.createSalesperson(salesperson);
 
         this.jStatusMsg.setText(msg);
