@@ -256,14 +256,14 @@ public class CreateWidgetForm extends javax.swing.JFrame {
             conn = DriverManager.getConnection(connectionURL);
             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
             
-            ResultSet rs = stmt.executeQuery("Select * From APP.WIDGET");
+            ResultSet rs = stmt.executeQuery("Select * From APP.WIDGETS");
             
             rs.moveToInsertRow();
-            rs.updateString("NAME", jCreateName.getText());
+            rs.updateString("WIDGETNAME", jCreateName.getText());
             rs.updateString("DESCRIPTION", jCreateDesc.getText());
-            rs.updateString("COST", jCreateCost.getText());
-            rs.updateString("PRICE",jCreatePrice.getText());
-            rs.updateString("QUANTITY", jCreateQuant.getText());
+            rs.updateString("CUNITPRICE", jCreateCost.getText());
+            rs.updateString("SUNITPRICE",jCreatePrice.getText());
+            rs.updateString("QTY", jCreateQuant.getText());
             rs.insertRow();
             stmt.close();
             rs.close();
