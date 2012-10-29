@@ -9,8 +9,7 @@ package com.thp.object;
  *
  * @author Joanne Co
  */
-public class Customer {
-    Person person = new Person();
+public class Customer extends Person {
     int id;
     int type;
     String company;
@@ -22,6 +21,7 @@ public class Customer {
     String shipToCity;
     String shipToState;
     int shipToZipCode;
+    long phone;
     long fax;
     String email;
     String contact;
@@ -55,6 +55,7 @@ public class Customer {
                     String terms, 
                     int dRate, 
                     double tRate) {
+        setCustomer(fn,ln,cp,tel,fax,em,ct,soldAddr,soldCity,soldState,soldZip,shipAddr,shipCity, shipState,shipZip,pref,sp,terms,dRate,tRate);
     }
  //Set functions
     public void setCustomer(String fn,
@@ -77,8 +78,9 @@ public class Customer {
                             String terms,
                             int dRate,
                             double tRate){
-        setPerson(fn, ln, tel);
-        setFax(fax);
+        setPerson(fn, ln);
+        setPhone(tel);
+        setFax(fx);
         setEmail(em);
         setContact(ct);
         setSoldToAddress(soldAddr,soldCity,soldState,soldZip);
@@ -96,10 +98,11 @@ public class Customer {
         else
             type = 2;
     }
-    public void setPerson(String fn, String ln, long tel){
-        person.firstName = fn;
-        person.lastName = ln;
-        person.phone = tel;
+    public void setCustomerName(String fn, String ln){
+        setPerson(fn, ln);
+    }
+    public void setPhone(long tel){
+        phone=tel;
     }
     public void setFax(long fx){
         fax=fx;
@@ -144,14 +147,9 @@ public class Customer {
     public int getCustType(){
         return type;
     }
-    public String getFirstName(){
-        return person.firstName;
-    }
-    public String getLastName(){
-        return person.lastName;
-    }
+
     public long getPhone(){
-        return person.phone;
+        return phone;
     }
     public String getCompany(){
         return company;
