@@ -9,7 +9,7 @@ package com.thp.object;
  * @author user
  */
 public class Salesperson extends Person{
-
+    public static final int MAX_PHONE=10;
     int id;
     long phone;
 
@@ -18,11 +18,11 @@ public class Salesperson extends Person{
     }
 
     public Salesperson(String fn, String ln, long tel){
-        setPerson(fn, ln);
-        setPhone(tel);
+        setSalesperson(fn, ln, tel);
     }
     public void setSalesperson(String fn, String ln, long tel) {
         setPerson(fn, ln);
+        setPhone(tel);
     }
 
     
@@ -30,7 +30,13 @@ public class Salesperson extends Person{
         id = sid;
     }
     public void setPhone(long tel){
-        phone = tel;
+        if(tel < 0){
+            System.out.println("Phone number is negative. Will be set to 0");
+            phone = 0000000000;
+        }
+        else{
+            phone = tel;
+        }
     }
     public int getId(){
         return id;
