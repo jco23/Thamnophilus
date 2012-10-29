@@ -292,17 +292,17 @@ public class EditWidgetForm extends javax.swing.JFrame {
             conn = DriverManager.getConnection(connectionURL);
             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
             
-            ResultSet rs = stmt.executeQuery("Select * From APP.WIDGET");
+            ResultSet rs = stmt.executeQuery("Select * From APP.WIDGETS");
             
             while(rs.next())
             {
-                if(jDesiredWidget.getText().equalsIgnoreCase(rs.getString("NAME")))
+                if(jDesiredWidget.getText().equalsIgnoreCase(rs.getString("WIDGETNAME")))
                 {
-                    jEditName.setText(rs.getString("NAME"));
+                    jEditName.setText(rs.getString("WIDGETNAME"));
                     jEditDesc.setText(rs.getString("DESCRIPTION"));
-                    jEditCost.setText(rs.getString("COST"));
-                    jEditPrice.setText(rs.getString("PRICE"));
-                    jEditQuant.setText(rs.getString("QUANTITY"));
+                    jEditCost.setText(rs.getString("CUNITPRICE"));
+                    jEditPrice.setText(rs.getString("SUNITPRICE"));
+                    jEditQuant.setText(rs.getString("QTY"));
                     jFrame1.setVisible(true);
                     found=true;
                 }
@@ -352,17 +352,17 @@ public class EditWidgetForm extends javax.swing.JFrame {
             conn = DriverManager.getConnection(connectionURL);
             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
             
-            ResultSet rs = stmt.executeQuery("Select * From APP.WIDGET");
+            ResultSet rs = stmt.executeQuery("Select * From APP.WIDGETS");
             
             while(rs.next())
             {
-                if(jDesiredWidget.getText().equalsIgnoreCase(rs.getString("NAME")))
+                if(jDesiredWidget.getText().equalsIgnoreCase(rs.getString("WIDGETNAME")))
                 {
-                    rs.updateString("NAME", jEditName.getText());
+                    rs.updateString("WIDGETNAME", jEditName.getText());
                     rs.updateString("DESCRIPTION", jEditDesc.getText());
-                    rs.updateString("COST", jEditCost.getText());
-                    rs.updateString("PRICE", jEditPrice.getText());
-                    rs.updateString("QUANTITY", jEditQuant.getText());
+                    rs.updateString("CUNITPRICE", jEditCost.getText());
+                    rs.updateString("SUNITPRICE", jEditPrice.getText());
+                    rs.updateString("QTY", jEditQuant.getText());
                     rs.updateRow();
                     found = true;
                     jStatus.setText("SUCCESS!");
