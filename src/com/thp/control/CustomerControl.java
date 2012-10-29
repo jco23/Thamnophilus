@@ -4,10 +4,9 @@
  */
 package com.thp.control;
 
-import com.thp.boundary.createCustomerForm;
+import com.thp.boundary.CreateCustomerForm;
 import com.thp.object.AccountDB;
 import com.thp.object.Customer;
-import com.thp.object.Person;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,26 +21,46 @@ public class CustomerControl {
     CustomerControl(){
         
     }
-    public static Customer getCustomer(Customer cust){
-        AccountDB db = new AccountDB();
-        try {
-            db.openDB();
-            Statement stmt = db.conn.createStatement();  
-            ResultSet rs = stmt.executeQuery("SELECT * FROM APP.DEPARTMENT");
-            
-            while (rs.next()) {
-               cust.setPerson(rs.getString("NAME"), rs.getString("ID"), 12345678);
-            }
-            rs.close();
-            
-            db.closeDB();
-        } catch (SQLException ex) {
-            Logger.getLogger(createCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return cust;
-    }
     
-    public static void createCustomer(){}
-    public static void editCustomer(){}
-    public static void searchCustomer(){}
+    public static String createCustomer(Customer cust){
+        try {
+            Statement stmt = AccountDB.conn.createStatement();  
+            String sql = "INSERT INTO APP.CUSTOMERS(custtype, " + 
+                    "firstname, lastname, company, phone, fax, email, contact, " +
+                    "soldtoaddress, soldtocity, soldtostate, soldtozipcode, " + 
+                    "shiptoaddress, shiptocity, shiptostate, shiptozipcode, " + 
+                    "preference, salespersonid, termscode, discount, taxrate) VALUES('" + 
+                            cust.getCustType() + ", " + 
+                            cust.getFirstName() + "', '" + 
+                            cust.getLastName() + "', " + 
+                            cust.getPhone() + ", '" + 
+                            cust.getFax() + ", " +
+                            cust.getEmail() + "', '" + 
+                            cust.getContact() + "', '" + 
+                            cust.getSoldToAddress() + "', '" + 
+                            cust.getSoldToCity() + "', '" + 
+                            cust.getSoldToState() + "', " + 
+                            cust.getSoldToZip() + ", '" +
+                            cust.getShipToAddress() + "', '" + 
+                            cust.getShipToCity() + "', '" +
+                            cust.getShipToState() + "', " + 
+                            cust.getShipToZip() + ", " + 
+                            cust.getPreference() + ", " + 
+                            cust.getSalesperson() + ", '" + 
+                            cust.getTermsCode() + "', " + 
+                            cust.getDiscountRate() + ", " +
+                            cust.getTaxRate() + ")";
+            stmt.executeUpdate(sql);
+            return "Customer successfully created.";
+        } catch (SQLException ex) {
+            Logger.getLogger(CreateCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+            return "Error. Customer was not successfully created.";
+        }
+    }
+    public static void editCustomer(){
+    
+    }
+    public static void searchCustomer(){
+    
+    }
 }
