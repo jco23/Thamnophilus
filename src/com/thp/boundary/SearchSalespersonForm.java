@@ -1,20 +1,8 @@
-package com.thp.boundary;//GEN-FIRST:event_jSearchBtnMouseClicked
-//GEN-LAST:event_jSearchBtnMouseClicked
+package com.thp.boundary;                                        
+                                       
 
-import com.thp.control.CustomerControl;
 import com.thp.control.SalespersonControl;
-import com.thp.object.AccountDB;
-import com.thp.object.Customer;
-import com.thp.object.Person;
 import com.thp.object.Salesperson;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /*
  * To change this template, choose Tools | Templates
@@ -60,6 +48,8 @@ public class SearchSalespersonForm extends javax.swing.JFrame {
         jNameLbl1 = new javax.swing.JLabel();
         jEditPhoneTxt = new javax.swing.JTextField();
         jCancelBtn = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jStatusMsg = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -192,6 +182,12 @@ public class SearchSalespersonForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel2.setText("Status:");
+
+        jStatusMsg.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jStatusMsg.setText("None");
+
         jMenu1.setText("File");
 
         jMenuItem1.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
@@ -217,8 +213,13 @@ public class SearchSalespersonForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jStatusMsg)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -231,13 +232,20 @@ public class SearchSalespersonForm extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jStatusMsg)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jCancelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29))
         );
 
@@ -261,14 +269,21 @@ public class SearchSalespersonForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         //pass each data item into the database
         String [] name = this.jNameTxt.getText().split(" ");
-        String fn = name[0];
-        String ln = name[1];
-        Salesperson salesperson = new Salesperson();
-        salesperson.setSalesperson(fn, ln,0);
-        salesperson = SalespersonControl.searchSalesperson(salesperson);
-        this.jEditFirstNameTxt.setText(salesperson.getFirstName());
-        this.jEditLastNameTxt.setText(salesperson.getLastName());
-        this.jEditPhoneTxt.setText(Long.toString(salesperson.getPhone()));
+        if(name.length == 2){
+            String fn = name[0];
+            String ln = name[1];
+
+            Salesperson salesperson = new Salesperson();
+            salesperson.setSalesperson(fn, ln, 0);
+            salesperson = SalespersonControl.searchSalesperson(salesperson);
+            this.jEditFirstNameTxt.setText(salesperson.getFirstName());
+            this.jEditLastNameTxt.setText(salesperson.getLastName());
+            this.jEditPhoneTxt.setText(Long.toString(salesperson.getPhone()));
+        }
+        else{
+            this.jStatusMsg.setText("Error. Enter the full name.");
+            this.jNameTxt.requestFocus();
+        }
     }//GEN-LAST:event_jSearchBtnMouseClicked
 
     private void jCancelBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jCancelBtnMouseClicked
@@ -278,8 +293,7 @@ public class SearchSalespersonForm extends javax.swing.JFrame {
 
     private void jEditBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jEditBtnMouseClicked
         // TODO add your handling code here:
-        Salesperson salesperson = new Salesperson();
-        salesperson.setSalesperson(this.jEditFirstNameTxt.getText(), this.jEditLastNameTxt.getText(),Long.parseLong(this.jEditPhoneTxt.getText()));
+        Salesperson salesperson = new Salesperson(this.jEditFirstNameTxt.getText(), this.jEditLastNameTxt.getText(),Long.parseLong(this.jEditPhoneTxt.getText()));
         SalespersonControl.editSalesperson(salesperson);
     }//GEN-LAST:event_jEditBtnMouseClicked
 
@@ -331,6 +345,7 @@ public class SearchSalespersonForm extends javax.swing.JFrame {
     private javax.swing.JTextField jEditLastNameTxt;
     private javax.swing.JTextField jEditPhoneTxt;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -341,6 +356,7 @@ public class SearchSalespersonForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JLabel jPriceLbl1;
     private javax.swing.JButton jSearchBtn;
+    private javax.swing.JLabel jStatusMsg;
     private javax.swing.JLabel jTitleLbl;
     private javax.swing.JLabel jTitleLbl1;
     // End of variables declaration//GEN-END:variables
