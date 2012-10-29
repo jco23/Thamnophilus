@@ -8,38 +8,36 @@ package com.thp.object;
  *
  * @author user
  */
-public class Salesperson {
+public class Salesperson extends Person{
 
     int id;
-    Person person = new Person();
+    long phone;
 
     public Salesperson(){
         setSalesperson("","",0);
     }
 
     public Salesperson(String fn, String ln, long tel){
-        setSalesperson(fn, ln, tel);
+        setPerson(fn, ln);
+        setPhone(tel);
     }
     public void setSalesperson(String fn, String ln, long tel) {
-        person.setPerson(fn, ln, tel);
+        setPerson(fn, ln);
     }
 
     
     public void setId(int sid){
         id = sid;
     }
-        
+    public void setPhone(long tel){
+        phone = tel;
+    }
     public int getId(){
         return id;
     }
-    public String getFirstName(){
-        return person.firstName;
-    }
-    public String getLastName(){
-        return person.lastName;
-    }
+
     public long getPhone(){
-        return person.phone;
+        return phone;
     }  
 
 
