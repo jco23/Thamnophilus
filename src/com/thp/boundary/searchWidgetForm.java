@@ -292,17 +292,17 @@ public class searchWidgetForm extends javax.swing.JFrame {
             conn = DriverManager.getConnection(connectionURL);
             Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
             
-            ResultSet rs = stmt.executeQuery("Select * From APP.WIDGET");
+            ResultSet rs = stmt.executeQuery("Select * From APP.WIDGETS");
             
             while(rs.next())
             {
-                if(jDesiredWidget.getText().equalsIgnoreCase(rs.getString("NAME")))
+                if(jDesiredWidget.getText().equalsIgnoreCase(rs.getString("WIDGETNAME")))
                 {
-                    jMatchName.setText(rs.getString(1));
-                    jMatchCost.setText(rs.getString(3));
-                    jMatchPrice.setText(rs.getString(4));
-                    jMatchQuantity.setText(rs.getString(5));
-                    jMatchDescription.setText(rs.getString(2));
+                    jMatchName.setText(rs.getString(2));
+                    jMatchCost.setText(rs.getString(4));
+                    jMatchPrice.setText(rs.getString(5));
+                    jMatchQuantity.setText(rs.getString(6));
+                    jMatchDescription.setText(rs.getString(3));
                     jFrame1.setVisible(true);
                     found = true;
                 }
