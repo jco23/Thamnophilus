@@ -12,15 +12,15 @@ package com.thp.object;
 public class Person {
     String firstName;
     String lastName;
-    int phone;
+    long phone;
     
     public Person(){
         setPerson("","",0);
     }
-    public Person(String fn, String ln, int tel){
+    public Person(String fn, String ln, long tel){
         setPerson(fn, ln, tel);
     }
-    public void setPerson(String fn, String ln, int tel){
+    public void setPerson(String fn, String ln, long tel){
         firstName=fn;
         lastName=ln;
         phone=tel;
@@ -34,7 +34,7 @@ public class Person {
         return lastName;
     }
     
-    public int getPhone(){
+    public long getPhone(){
         return phone;
     }
 }
