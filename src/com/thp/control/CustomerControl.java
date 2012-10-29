@@ -7,7 +7,6 @@ package com.thp.control;
 import com.thp.boundary.CreateCustomerForm;
 import com.thp.object.AccountDB;
 import com.thp.object.Customer;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
