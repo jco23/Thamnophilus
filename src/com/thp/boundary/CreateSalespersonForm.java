@@ -226,7 +226,8 @@ public class CreateSalespersonForm extends javax.swing.JFrame {
         // TODO add your handling code here:
         //pass each data item into the database
         Salesperson salesperson = new Salesperson(this.jFirstNameTxt.getText(), this.jLastNameTxt.getText(), Long.parseLong(this.jPhoneTxt.getText()));
-        String msg = SalespersonControl.createSalesperson(salesperson);
+        String msg;
+        msg = SalespersonControl.createSalesperson(salesperson);
 
         this.jStatusMsg.setText(msg);
         this.jStatusMsg.setVisible(true);

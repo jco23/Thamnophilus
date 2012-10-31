@@ -22,7 +22,7 @@ public class SalespersonControl {
     
     //Pre-condition: Salesperson object containing firstname, lastname, & phone
     //Post-condition: Returns a status message
-    public static String createSalesperson(Salesperson sp){
+public static String createSalesperson(Salesperson sp){
         try {
             Statement stmt = AccountDB.conn.createStatement();  
             String sql = "INSERT INTO APP.SALESPEOPLE(firstname, lastname, phone) VALUES('" + 

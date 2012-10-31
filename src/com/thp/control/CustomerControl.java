@@ -3,8 +3,6 @@
  * and open the template in the editor.
  */
 package com.thp.control;
-
-import com.thp.boundary.CreateCustomerForm;
 import com.thp.object.AccountDB;
 import com.thp.object.Customer;
 import java.sql.SQLException;
@@ -52,7 +50,7 @@ public class CustomerControl {
             stmt.executeUpdate(sql);
             return "Customer successfully created.";
         } catch (SQLException ex) {
-            Logger.getLogger(CreateCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
+           // Logger.getLogger(CreateCustomerForm.class.getName()).log(Level.SEVERE, null, ex);
             return "Error. Customer was not successfully created.";
         }
     }
